@@ -1,0 +1,18 @@
+variable "stack" {
+  type = "string"
+}
+variable "region" {
+  type = "string"
+}
+variable "aws_access_key" {
+  type = "string"
+}
+variable "aws_secret_key" {
+  type = "string"
+}
+variable "git_project" {
+  type = "string"
+
+}variable "port" {
+  type = "string"
+}
