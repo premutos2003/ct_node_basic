@@ -3,12 +3,12 @@ resource "aws_instance" "deploy_instance" {
   instance_type = "t2.micro"
 
   provisioner "file" {
-    source      = "../${var.git_project}"
+    source      = "./${var.git_project}"
     destination = "/app"
   }
 
   provisioner "file" {
-    source      = "../Dockerfile"
+    source      = "./Dockerfile"
     destination = "/app/${var.git_project}"
   }
 
