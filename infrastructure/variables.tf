@@ -16,3 +16,6 @@ variable "git_project" {
 }variable "port" {
   type = "string"
 }
+variable "version" {
+  type = "string"
+}
