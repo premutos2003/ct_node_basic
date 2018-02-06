@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "s3_bucket_deploy_artefact" {
 
 }
 resource "aws_s3_bucket_object" "deploy_artefact" {
-  source = "../${var.git_project}"
+  source = "../${var.git_project}.tar"
   bucket = "${aws_s3_bucket.s3_bucket_deploy_artefact.id}"
   key = "${var.stack}/${var.version}"
 }
