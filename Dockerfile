@@ -1,8 +1,10 @@
 FROM node:carbon
 
+ARG port
+
 WORKDIR /usr/src/app
-COPY package*.json ./
+COPY /app/package*.json ./
 RUN npm install
-COPY . .
-EXPOSE 8080
+COPY ./app .
+EXPOSE $port
 CMD [ "npm", "start" ]
