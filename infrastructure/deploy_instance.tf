@@ -1,5 +1,5 @@
 resource "aws_instance" "test_app" {
-  ami = "ami-af0fc0c0"
+  ami = "ami-244c7a39"
   key_name = "twitter_key"
   instance_type = "t2.micro"
   associate_public_ip_address = true
