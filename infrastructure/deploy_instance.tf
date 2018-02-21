@@ -18,3 +18,8 @@ resource "aws_instance" "test_app" {
   }
 
 }
+
+output "instance_ip" {
+  value = "${aws_instance.test_app.public_ip}"
+}
+
