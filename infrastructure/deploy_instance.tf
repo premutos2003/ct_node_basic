@@ -1,4 +1,5 @@
 resource "aws_instance" "test_app" {
+  depends_on = ["aws_s3_bucket_object.deploy_artefact"]
   ami = "ami-244c7a39"
   key_name = "twitter_key"
   instance_type = "t2.micro"
