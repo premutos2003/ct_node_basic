@@ -69,7 +69,7 @@ resource "aws_key_pair" "key" {
 }
 
 resource "aws_s3_bucket" "secrets_bucket" {
-  bucket = "crab-base-setup"
+  bucket = "${var.stack}_${var.git_project}_${var.environment}_${var.region}"
   region = "${var.region}"
 }
 
