@@ -69,7 +69,7 @@ resource "aws_key_pair" "key" {
 }
 
 resource "aws_s3_bucket" "secrets_bucket" {
-  bucket = "${var.stack}_${var.git_project}_${var.environment}_${var.region}"
+  bucket = "${var.stack}-${var.git_project}-${var.environment}-${var.region}-secrets"
   region = "${var.region}"
 }
 
