@@ -6,9 +6,11 @@ ARG REACT_APP_PROD_API_URL=localhost
 
 WORKDIR /usr/src/app
 
+RUN ls
 COPY ${folder} /package*.json ./
 
 RUN npm install
+
 COPY ./${folder} .
 EXPOSE $port
 
