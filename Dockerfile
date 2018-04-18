@@ -6,7 +6,7 @@ ARG REACT_APP_PROD_API_URL=localhost
 
 WORKDIR /usr/src/app
 
-COPY ${folder} /package*.json ./
+COPY ${folder}/package*.json ./
 
 RUN npm install
 COPY ./${folder} .
