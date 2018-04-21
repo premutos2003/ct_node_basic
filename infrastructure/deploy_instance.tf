@@ -1,4 +1,4 @@
-resource "aws_instance" "test_app" {
+resource "aws_instance" "instance" {
   depends_on = ["aws_s3_bucket_object.deploy_artefact","aws_iam_policy.deploy_policy"]
   ami = "ami-d3c022bc"
 
@@ -15,7 +15,7 @@ resource "aws_instance" "test_app" {
     connection {
       type     = "ssh"
       user = "ec2-user"
-      host = "${aws_instance.test_app.public_ip}"
+      host = "${aws_instance.instance.public_ip}"
       private_key =  "${file("../key/base_${var.stack}_${var.git_project}_${var.environment}_${var.region}_id-rsa")}"
     }
     inline = [
@@ -40,21 +40,18 @@ resource "aws_instance" "test_app" {
     connection {
       type     = "ssh"
       user = "ec2-user"
-      host = "${aws_instance.test_app.public_ip}"
+      host = "${aws_instance.instance.public_ip}"
       //private_key = "${file(local.pkey)}"
       private_key =  "${file("../key/base_${var.stack}_${var.git_project}_${var.environment}_${var.region}_id-rsa")}"
     }
+
     inline = [
       "docker images",
       "gunzip ./artefact/${var.version}.tar.gz",
       "docker load < ./artefact/${var.version}.tar",
-      "docker run -d -p 80:${var.port} --add-host ${var.git_project}:${aws_instance.test_app.public_ip}  ${var.git_project}:latest"
+      "docker run -d -p 80:${var.port} --add-host ${var.git_project}:${aws_instance.instance.public_ip}  ${var.git_project}:latest"
     ]
   }
-}
-
-output "instance_ip" {
-  value = "${aws_instance.test_app.public_ip}"
 }
 
 
