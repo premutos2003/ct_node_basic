@@ -5,11 +5,11 @@ output "app_instance_id" {
   value = "${aws_instance.instance.id}"
 }
 output "app_id" {
-  value = "${aws_instance.instance.id}"
+  value = "${var.git_project}"
 }
 output "stack" {
-  value = "${aws_instance.instance.id}"
+  value = "${var.stack}"
 }
 output "region" {
-  value = "${aws_instance.instance.id}"
+  value = "${var.region}"
 }
