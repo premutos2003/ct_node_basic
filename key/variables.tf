@@ -14,7 +14,8 @@ variable "git_project" {
 variable "environment" {
   type = "string"
   default = "dev"
-}variable "kms_key_arn" {
+}
+variable "kms_key_arn" {
   type = "string"
   default = "arn:aws:kms:eu-central-1:091744087420:key/926fb572-8f5e-426f-a75d-f3797f441896"
 }
