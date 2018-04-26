@@ -13,3 +13,6 @@ output "stack" {
 output "region" {
   value = "${var.region}"
 }
+output "env_id" {
+  value = "${var.environment}"
+}
