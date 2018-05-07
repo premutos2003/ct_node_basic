@@ -13,4 +13,8 @@ output "stack" {
 output "region" {
   value = "${var.region}"
 }
+output "id" {
+  value = "${var.git_project}-${var.environment}"
+}
+
 
