@@ -3,7 +3,7 @@ FROM node:alpine
 ARG port
 ARG folder=./app
 ARG REACT_APP_PROD_API_URL=localhost
-ARG run_cmd=npm start
+ARG run_cmd
 
 WORKDIR /usr/src/app
 
