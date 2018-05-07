@@ -13,4 +13,4 @@ RUN npm install
 COPY ./${folder} .
 EXPOSE $port
 
-CMD "npm start"
+CMD npm start
