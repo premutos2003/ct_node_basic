@@ -31,7 +31,7 @@ resource "aws_iam_policy" "deploy_policy" {
   policy = "${data.aws_iam_policy_document.deploy_role_policy_document.json}"
 }
 resource "aws_iam_instance_profile" "deploy_profile" {
-  name = "deploy_profile_${var.git_project}-${var.stack}"
+  name = "deploy_profile_${var.git_project}_${var.stack}"
   role = "${aws_iam_role.deploy_role.name}"
 }
 
